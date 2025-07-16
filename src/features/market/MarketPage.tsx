@@ -4,6 +4,7 @@ import { fetchItems, addToCart } from "./marketSlice";
 import type { RootState } from "../../app/store";
 import $ from "jquery";
 import './MarketPage.scss';
+import ItemCard from "../../components/ItemCard";
 
 export default function MarketPage() {
     const dispatch = useDispatch();
@@ -37,21 +38,12 @@ export default function MarketPage() {
                         {items.map((item) => {
                             const inCart = carts.some((cartItem) => cartItem.id === item.id)
 
-                            return (
-                                <div
-                                    className="market-item"
-                                    key={item.id}
-                                    data-tooltip={`Price: $${item.price}`}
-                                >
-                                    <h2>{item.name}</h2>
-                                    <button
-                                        onClick={() => dispatch(addToCart(item))}
-                                        disabled={inCart}
-                                    >
-                                        {inCart ? 'Added' : 'Add to Cart'}
-                                    </button>
-                                </div>
-                            )
+                            return <ItemCard
+                                key={item.id}
+                                item={item}
+                                inCart={inCart}
+                                onAdd={() => dispatch(addToCart(item))}
+                            />
                         })}
                     </div>
                 )}
