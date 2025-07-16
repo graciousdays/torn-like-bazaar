@@ -2,7 +2,6 @@
 
 ![CI](https://github.com/graciousdays/torn-like-bazaar/actions/workflows/ci.yml/badge.svg)
 
-
 A simplified marketplace frontend inspired by Torn, built with React + TypeScript, using Redux Toolkit and Redux-Saga for state management. Includes legacy jQuery behavior (tooltips) and SCSS styling.
 
 ## 🌐 Live Demo
@@ -48,6 +47,7 @@ npm run lint
 ---
 
 ## ✨ Features
+
 - Redux-based item marketplace
 - Async item loading with redux-saga
 - Dynamic tooltips via jQuery hover binding
@@ -57,7 +57,9 @@ npm run lint
 ---
 
 ## 🧪 Testing
+
 Jest and React Testing Library are preinstalled. To run tests:
+
 ```bash
 # Run tests
 npm run test
@@ -80,4 +82,5 @@ src/
 ---
 
 ## 📝 License
+
 MIT — free to use, fork, and modify.

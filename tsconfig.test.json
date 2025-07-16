@@ -1,15 +1,8 @@
 // tsconfig.test.json
 {
-    "extends": "./tsconfig.app.json",
-    "compilerOptions": {
-        "types": [
-            "jest",
-            "node"
-        ]
-    },
-    "include": [
-        "src/**/*.test.ts",
-        "src/**/*.test.tsx",
-        "jest.setup.ts"
-    ]
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "types": ["jest", "node"]
+  },
+  "include": ["src/**/*.test.ts", "src/**/*.test.tsx", "jest.setup.ts"]
 }
