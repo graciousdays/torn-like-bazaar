@@ -68,6 +68,7 @@
         font-size: 1.2rem;
         display: flex;
         align-items: center;
+        gap: 1rem;
         margin-top: 1rem;
 
         .cart-badge {
@@ -75,12 +76,15 @@
             color: white;
             font-weight: bold;
             padding: 0.2rem 0.5rem;
-            margin-left: 0.5rem;
             border-radius: 999px;
             font-size: 0.9rem;
         }
-    }
 
+        .cart-total {
+            font-weight: bold;
+            color: #333;
+        }
+    }
 }
 
 button {

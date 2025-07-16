@@ -8,6 +8,7 @@ import './MarketPage.scss';
 export default function MarketPage() {
     const dispatch = useDispatch();
     const { items, carts, loading } = useSelector((state: RootState) => state.market);
+    const total = carts.reduce((sum, item) => sum + item.price, 0);
 
     useEffect(() => {
         dispatch(fetchItems());
@@ -57,6 +58,7 @@ export default function MarketPage() {
             </div>
             <div className="cart-header">
                 🛒 <span className="cart-badge">{carts.length}</span>
+                <span className="cart-total">Total: ${total}</span>
             </div>
         </div>
     );
