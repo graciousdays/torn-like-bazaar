@@ -28,7 +28,9 @@ export default function MarketPage() {
             <h1>Torn Like Bazaar</h1>
             <div className="market-items">
                 {loading ? (
-                    <p className="loading">Loading items...</p>
+                    <div className="loading">
+                        <span className="spinner" /> Loading items...
+                    </div>
                 ) : (
                     <div className="market-items">
                         {items.map(item => (
