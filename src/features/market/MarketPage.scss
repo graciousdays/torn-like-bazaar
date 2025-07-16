@@ -1,0 +1,31 @@
+.market-page {
+    .market-items {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .market-item {
+        position: relative;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        text-align: center;
+
+        &:hover {
+            background: #f0f0f0
+        }
+    }
+
+    .tooltip {
+        position: absolute;
+        bottom: -1.5rem;
+        left: 0;
+        background: black;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 3px;
+        font-size: 12px;
+        z-index: 100;
+        white-space: nowrap;
+    }
+}
