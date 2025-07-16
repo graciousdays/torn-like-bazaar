@@ -34,7 +34,9 @@ export default function MarketPage() {
                     </div>
                 ))}
             </div>
-            <h2>Cart has {carts.length} items.</h2>
+            <div className="cart-header">
+                🛒 <span className="cart-badge">{carts.length}</span>
+            </div>
         </div>
     );
 }
