@@ -1,6 +1,5 @@
-export interface Item {
-    id: string;
-    name: string;
-    price: number;
-    quantity: number;
+export type Item = {
+    readonly id: number
+    name: string
+    price: number
 }

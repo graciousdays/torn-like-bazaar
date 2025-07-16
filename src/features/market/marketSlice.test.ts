@@ -5,8 +5,8 @@ import type { Item } from './types';
 describe("marketSlice", () => {
     it("should set items", () => {
         const mockItems: Item[] = [
-            { id: "1", name: "Book", price: 1000, quantity: 1 },
-            { id: "2", name: "Pen", price: 100, quantity: 2 },
+            { id: 1, name: "Book", price: 1000 },
+            { id: 2, name: "Pen", price: 100 },
         ];
 
         const newState = reducer(undefined, setItems(mockItems));
@@ -15,8 +15,8 @@ describe("marketSlice", () => {
 
     it("should add item to cart", () => {
         const mockItems: Item[] = [
-            { id: "1", name: "Book", price: 1000, quantity: 1 },
-            { id: "2", name: "Pen", price: 100, quantity: 2 },
+            { id: 1, name: "Book", price: 1000 },
+            { id: 2, name: "Pen", price: 100 },
         ];
 
         let state = reducer(undefined, setItems(mockItems));
@@ -24,6 +24,6 @@ describe("marketSlice", () => {
 
         expect(state.carts).toHaveLength(1);
         expect(state.carts[0].name).toBe("Book");
-        expect(state.carts[0].quantity).toBe(1);
+        expect(state.carts[0].price).toBe(1000);
     });
 });

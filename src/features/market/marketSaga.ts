@@ -7,12 +7,12 @@ function* loadItems() {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve([
-                    { id: "1", name: "Energy Drink", price: 500, quantity: 1 },
-                    { id: "2", name: "Book of Crimes", price: 1000, quantity: 2 },
-                    { id: "3", name: "Orchid", price: 1500, quantity: 3 },
+                    { id: 1, name: "Energy Drink", price: 500 },
+                    { id: 2, name: "Book of Crimes", price: 1000 },
+                    { id: 3, name: "Orchid", price: 1500 },
                 ]);
             }, 1000);
-        }); 
+        });
     });
     yield put(setItems(items))
 }
