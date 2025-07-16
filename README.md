@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# Torn Bazaar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simplified marketplace frontend inspired by Torn, built with React + TypeScript, using Redux Toolkit and Redux-Saga for state management. Includes legacy jQuery behavior (tooltips) and SCSS styling.
 
-Currently, two official plugins are available:
+## 🔧 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** + **TypeScript**
+- **Redux Toolkit** + **Redux-Saga**
+- **jQuery** (for simulating legacy DOM manipulation)
+- **SCSS** for styling
+- **Vite** for fast build/dev
+- **Jest** and **Testing Library** for testing
 
-## Expanding the ESLint configuration
+## 🖥️ Development Environment
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **macOS Sequoia 15.5**
+- **Node.js**: `v22.17.0`
+- **npm**: `10.9.2`
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Install dependencies
+npm install
+
+# Run dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linter
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✨ Features
+- Redux-based item marketplace
+- Async item loading with redux-saga
+- Dynamic tooltips via jQuery hover binding
+- Cart state management
+- Global and scoped SCSS styling
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🧪 Testing
+Jest and React Testing Library are preinstalled. To run tests:
+```bash
+# Run tests
+npm run test
 ```
+
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+├── app/             # Redux store setup
+├── features/
+│   └── market/      # Item list, cart, saga, slice, UI
+├── styles/          # Global SCSS
+├── App.tsx
+├── main.tsx
+```
+
+---
+
+## 📝 License
+MIT — free to use, fork, and modify.
