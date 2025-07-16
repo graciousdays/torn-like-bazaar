@@ -1,4 +1,10 @@
 .market-page {
+    .loading {
+        font-style: italic;
+        color: #555;
+        margin: 1rem 0;
+    }
+
     .market-items {
         display: flex;
         gap: 1rem;

@@ -7,7 +7,7 @@ import './MarketPage.scss';
 
 export default function MarketPage() {
     const dispatch = useDispatch();
-    const { items, carts } = useSelector((state: RootState) => state.market);
+    const { items, carts, loading } = useSelector((state: RootState) => state.market);
 
     useEffect(() => {
         dispatch(fetchItems());
@@ -27,12 +27,18 @@ export default function MarketPage() {
         <div className="market-page">
             <h1>Torn Like Bazaar</h1>
             <div className="market-items">
-                {Array.isArray(items) && items.map((item) => (
-                    <div className="market-item" key={item.id} data-tooltip={`Price: $${item.price}`}>
-                        <h2>{item.name}</h2>
-                        <button onClick={() => dispatch(addToCart(item))}>Add to Cart</button>
+                {loading ? (
+                    <p className="loading">Loading items...</p>
+                ) : (
+                    <div className="market-items">
+                        {items.map(item => (
+                            <div className="market-item" key={item.id} data-tooltip={`Price: $${item.price}`}>
+                                <h2>{item.name}</h2>
+                                <button onClick={() => dispatch(addToCart(item))}>Add to Cart</button>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                )}
             </div>
             <div className="cart-header">
                 🛒 <span className="cart-badge">{carts.length}</span>
