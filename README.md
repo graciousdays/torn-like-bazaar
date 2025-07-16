@@ -5,6 +5,10 @@
 
 A simplified marketplace frontend inspired by Torn, built with React + TypeScript, using Redux Toolkit and Redux-Saga for state management. Includes legacy jQuery behavior (tooltips) and SCSS styling.
 
+## 🌐 Live Demo
+
+https://torn-like-bazaar.vercel.app
+
 ## 🔧 Tech Stack
 
 - **React 19** + **TypeScript**
