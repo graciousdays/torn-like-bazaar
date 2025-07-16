@@ -1,5 +1,8 @@
 # Torn Bazaar
 
+![CI](https://github.com/graciousdays/torn-like-bazaar/actions/workflows/ci.yml/badge.svg)
+
+
 A simplified marketplace frontend inspired by Torn, built with React + TypeScript, using Redux Toolkit and Redux-Saga for state management. Includes legacy jQuery behavior (tooltips) and SCSS styling.
 
 ## 🔧 Tech Stack
