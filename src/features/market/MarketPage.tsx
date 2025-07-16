@@ -33,12 +33,25 @@ export default function MarketPage() {
                     </div>
                 ) : (
                     <div className="market-items">
-                        {items.map(item => (
-                            <div className="market-item" key={item.id} data-tooltip={`Price: $${item.price}`}>
-                                <h2>{item.name}</h2>
-                                <button onClick={() => dispatch(addToCart(item))}>Add to Cart</button>
-                            </div>
-                        ))}
+                        {items.map((item) => {
+                            const inCart = carts.some((cartItem) => cartItem.id === item.id)
+
+                            return (
+                                <div
+                                    className="market-item"
+                                    key={item.id}
+                                    data-tooltip={`Price: $${item.price}`}
+                                >
+                                    <h2>{item.name}</h2>
+                                    <button
+                                        onClick={() => dispatch(addToCart(item))}
+                                        disabled={inCart}
+                                    >
+                                        {inCart ? 'Added' : 'Add to Cart'}
+                                    </button>
+                                </div>
+                            )
+                        })}
                     </div>
                 )}
             </div>
